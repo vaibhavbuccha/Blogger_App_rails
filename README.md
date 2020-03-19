@@ -29,11 +29,35 @@ Things you may want to cover:
 rails new blogger -d mysql
 ```
 
+### create models with migrations
+```bash
+rails g model User name:string email:string password_digest:string
+```
+ - the above command generate a model User and also a migartion file with fields name,email and password_digest .
 
+- for create table we have to migrate database.
+```bash
+rake db:migrate
+```
+
+### create database entries using seeds
+> *seeds* are use for create entries in database. for enteries we have to create a seed which tends to a perticular class with activerecods. for example
+```rb
+User.create(
+		:name = "name",
+		:email = "email@example.com",
+		:password_digest = "password"
+	)
+``` 
+- for create enter use the bellow command
+```bash
+rake db:seed
+```
 	
-
-
-
+### Routes
+```rb
+get 'profile', to: 'pages#show' # it means  /profile is the route which redirect to pages#show page
+```
 
 ### install packges
 
