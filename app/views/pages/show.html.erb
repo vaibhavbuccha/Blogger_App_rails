@@ -1,14 +1,17 @@
 <div class="row">
 	<div class="col-sm-6 col md-offset-3">
 		<h1>Profile</h1>
+		
+		<%  user = current_user %>
+
 		<table class="table">
 			<tr>
 				<th>Name : </th>
-				<td>Vaibhav Buccha</td>
+				<td><%= user.name %></td>
 			</tr>
 			<tr>
 				<th>Email : </th>
-				<td>vaibhav.buccha@ifuturz.com</td>
+				<td><%= user.email %></td>
 			</tr>
 		</table></td>
 	</div>

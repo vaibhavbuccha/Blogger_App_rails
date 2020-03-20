@@ -30,6 +30,7 @@ rails new blogger -d mysql
 ```
 
 ### create models with migrations
+---
 ```bash
 rails g model User name:string email:string password_digest:string
 ```
@@ -39,8 +40,10 @@ rails g model User name:string email:string password_digest:string
 ```bash
 rake db:migrate
 ```
+---
 
 ### create database entries using seeds
+---
 > *seeds* are use for create entries in database. for enteries we have to create a seed which tends to a perticular class with activerecods. for example
 ```rb
 User.create(
@@ -53,30 +56,41 @@ User.create(
 ```bash
 rake db:seed
 ```
-	
+---
+
+
 ### Routes
+---
 ```rb
 get 'profile', to: 'pages#show' # it means  /profile is the route which redirect to pages#show page
 ```
+---
 
 ### install packges
-
+---
 1. **install bootstarp-sass** => add package in gem file with version.
 ```bash
 gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bcrypt', '~> 3.1.7'
 ```
 > it was looking for 3.3.o version
 > than we have to bundle install for update dependencies.
 
-
+---
 
 ### Errors
-
+---
 1. **ActiveRecord::NoDatabaseError**  => this is due to database isn't found. for create database use the command mentioned below.
 ```bash
 rake db:create
 ```
 > the above command create database
-
+---
  
 
+### debugging
+---
+```rb
+abort checkemail.inspect
+
+```
