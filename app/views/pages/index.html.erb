@@ -1,6 +1,31 @@
-<div class="jumbotron">
+<div class="jumbotron main">
 	<h1>Welcome</h1>
 	<p>
 		Rails simple Authetication
 	</p>
 </div>
+
+<% @blogs.each do |b| %>
+<br>
+<div class="row">
+	<div class="col-sm-8 col-md-offset-2 well">
+		<div class="row title"  >
+			<div class="col-sm-3">
+				By :- <i><%= b.user.name %></i>
+			</div>	
+			<div class="col-sm-4"></div>
+			<div class="col-offset-3">
+				Created At :-  <i><%= b.created_at %></i>
+			</div>
+		</div>
+		<h4  ><%= b.title %></h4>		
+		<div>
+			<%= b.content %>
+		</div>
+		<div align="center">
+			<img src="<%= b.image %>" width="400px" height="300" alt="">
+		</div>
+		
+	</div>
+</div>
+<% end %>

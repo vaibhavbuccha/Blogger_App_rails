@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   layout 'application'
 
   def index
+  	@blogs = Blog.sorted 
   end
 
   def show
