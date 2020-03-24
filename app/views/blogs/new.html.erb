@@ -5,7 +5,7 @@
 		<hr>
 		</h4>
 		<% user = current_user %>
-		<%= form_for(@blog) do |f| %>
+		<%= form_for(@blog, html: { multipart: true } ) do |f| %>
 			<div>
 				<%= label_tag "title" %>
 				<%= f.text_field :title , class: "form-control" ,required: "required" ,placeholder: "Enter Blog Title" %>
@@ -14,7 +14,7 @@
 				<%= f.text_area :content , class: "form-control",required: "required" ,placeholder: "Enter Blog Content" %>
 				<br>
 				<%= label_tag "image url" %>
-				<%= f.url_field :image , class: "form-control",required: "required" ,placeholder: "Enter Image Url" %>
+				<%= f.file_field :image , class: "form-control",required: "required" ,placeholder: "Enter Image Url" %>
 				<%= f.hidden_field :user_id, value: user.id %>
 				<br>
 			</div>
