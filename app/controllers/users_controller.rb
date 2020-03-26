@@ -12,6 +12,8 @@ class UsersController < ApplicationController
   	if checkemail == nil
   		# abort checkemail.inspect
 	  	if @user.save
+        UserMailer.new_user(@user).deliver_now
+
 	  		flash[:success] = "Account has been created successfully!.."
 	  		redirect_to login_path
 	  	else

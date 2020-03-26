@@ -94,3 +94,42 @@ rake db:create
 abort checkemail.inspect
 
 ```
+
+### figaro 
+it allows us to use env varieables 
+for install it .
+> bundle exec figaro install
+
+### Send Mail using Mailer
+
+* step1
+Directory *config/enviroments/development.rb* and **config.action_mailer.raise_delivery_errors = false** change this to **true**.
+
+* step2
+Append code at the end of the file.
+```rb
+
+
+ config.action_mailer.delivery_method = :smtp  # this tells thats we are using smtp for set mails
+
+# this is the basic configuration for mail send via smtp
+ config.action_mailer.smtp_settings = {
+     address:              'smtp.gmail.com',
+     port:                 587,
+     domain:               'example.com',
+     user_name:             ENV['gmail_username'], # these are set as enviroment variables
+     password:              ENV['gmail_password'],
+     authentication:       'plain'
+  }
+
+ config.action_mailer.default_url_options = {host: "localhost:3000"}
+
+```
+
+* step3
+Create rails mailer
+```sh
+rails g mailer <mailer_name>  <method_name>
+```
+> It creates some files 
+
