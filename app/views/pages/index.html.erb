@@ -25,7 +25,14 @@
 		<div align="center">
 			<img src="<%= b.image %>" width="400px" height="300" alt="">
 		</div>
-		
+		<% if logged_in? %>
+		<hr>
+		<div class="col-sm-3">
+			<i class="fa fa-thumbs-up text-primary thumb"></i>
+		</div>
+		<%end %>
 	</div>
 </div>
 <% end %>
+
+

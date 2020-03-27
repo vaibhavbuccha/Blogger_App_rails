@@ -28,6 +28,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'figaro'
 
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
