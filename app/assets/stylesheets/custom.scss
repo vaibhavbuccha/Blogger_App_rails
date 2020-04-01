@@ -20,3 +20,48 @@ body{
 .fa{
 	font-size:50px!important;
 }
+
+.page ,.next ,.prev ,.last , .first {
+	padding: 10px;
+	background : black;
+	margin:5px;
+	color:white;
+	border-radius: 10px;
+}
+.first > a{
+	color: white !important;
+	text-decoration :none;
+}
+.page > a{
+	color: white !important;
+	text-decoration :none;
+}
+.next  > a{
+	color: white !important;
+	text-decoration :none;
+}
+.prev  > a{
+	color: white !important;
+	text-decoration :none;
+}
+.last > a{
+	color: white !important;
+	text-decoration :none;
+}
+
+.page > a:hover{
+	color: white !important;
+	text-decoration :none;
+}
+
+.page:hover ,.next:hover ,.prev:hover ,.last:hover ,.first:hover {
+	padding: 10px;
+	background : gray;
+	margin:5px;
+	color:white;
+	border-radius: 10px;
+}
+
+.current{
+	background:gray !important;
+}

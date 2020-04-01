@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   layout 'application'
 
   def index
-  	@blogs = Blog.sorted 
+  	@blogs = Blog.sorted.page(params[:page] || 1 ).per(1) 
   end
 
   def show
