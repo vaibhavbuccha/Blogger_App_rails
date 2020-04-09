@@ -1,10 +1,10 @@
 <div class="row">
 	<div class="col-sm-6 col md-offset-3">
 		<h1>Profile</h1>
-		
-		<%  user = current_user %>
 
-		<table class="table">
+		<%  user = current_user %>
+<!--
+		<table class="table table-bordered">
 			<tr>
 				<th>Name : </th>
 				<td><%= user.name %></td>
@@ -13,6 +13,32 @@
 				<th>Email : </th>
 				<td><%= user.email %></td>
 			</tr>
-		</table></td>
+			<tr>
+					<th>Image : </th>
+					<td>
+						<%= image_tag user.image ,width: "300px"  %>
+					</td>
+			</tr>
+		</table> -->
+
+		<div class="row" style="color:white; padding: 20px; font-size:20px;">
+			<div class="col-sm-6">
+				<b>Name</b>
+			</div>
+			<div class="col-sm-6">
+				<%= user.name %>
+			</div>
+		</div>
+		<div class="row"  style="color:white; padding: 20px; font-size:20px;" >
+			<div class="col-sm-6">Email</div>
+			<div class="col-sm-6"><%= user.email %></div>
+		</div>
+		<div class="row"  style="color:white; padding: 20px; font-size:20px;" >
+			<div class="col-sm-6">Picture</div>
+			<div class="col-sm-6">	<%= image_tag user.image ,width: "300px"  %></div>
+		</div>
+		<div>
+			
+		</div>
 	</div>
 </div>

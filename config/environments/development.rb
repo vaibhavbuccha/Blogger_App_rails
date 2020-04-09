@@ -11,6 +11,7 @@ Rails.application.configure do
 
   # Show full error reports.
   config.consider_all_requests_local = true
+  config.active_storage.service = :local
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
@@ -75,4 +76,3 @@ Rails.application.configure do
   config.action_mailer.default_url_options = {host: "localhost:3000"}
 
 end
-  

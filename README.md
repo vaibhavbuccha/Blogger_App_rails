@@ -51,7 +51,7 @@ User.create(
 		:email = "email@example.com",
 		:password_digest = "password"
 	)
-``` 
+```
 - for create enter use the bellow command
 ```bash
 rake db:seed
@@ -86,7 +86,7 @@ rake db:create
 ```
 > the above command create database
 ---
- 
+
 
 ### debugging
 ---
@@ -95,8 +95,8 @@ abort checkemail.inspect
 
 ```
 
-### figaro 
-it allows us to use env varieables 
+### figaro
+it allows us to use env varieables
 for install it .
 > bundle exec figaro install
 
@@ -131,5 +131,49 @@ Create rails mailer
 ```sh
 rails g mailer <mailer_name>  <method_name>
 ```
-> It creates some files 
+> It creates some files
 
+## Image Upload using active storage
+```
+ rails active_storage:install
+```
+It create a migration file
+```
+  rails db:migrate
+```
+set relationship in models
+```
+	has_one_attached:image
+```
+
+Add file field in our form
+
+```rb
+<div class="form-group" >
+  <%= label_tag :image %>
+  <%= f.file_field :image , class: "form-conmtrol"  %>
+</div>
+```
+set permission for image in Controller
+```rb
+	params.require(:user).permit(:name,:email,:password,:im age)
+
+```
+
+preview Image
+
+```rb
+image_tag obj.image
+
+```
+
+
+
+## migration
+
+add field to existing table
+```sh
+rails generate migration add_fieldname_to_tablename fieldname:string
+
+rake db:migrate
+```

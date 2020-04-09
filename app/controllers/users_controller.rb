@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(user_params)
-  	checkemail = User.find_by(email: @user[:email])  	
+  	checkemail = User.find_by(email: @user[:email])
   	if checkemail == nil
   		# abort checkemail.inspect
 	  	if @user.save
@@ -29,6 +29,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-  	params.require(:user).permit(:name,:email,:password)
+  	params.require(:user).permit(:name,:email,:password,:im age)
   end
 end

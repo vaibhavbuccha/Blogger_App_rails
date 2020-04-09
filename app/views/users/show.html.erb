@@ -16,6 +16,10 @@
 				<%= label_tag :password %>
 				<%= f.password_field :password ,class: "form-control",:placeholder=>"Please enter password",:required => true %>
 			</div>
+			<div class="form-group" >
+				<%= label_tag :image %>
+				<%= f.file_field :image , class: "form-conmtrol"  %>
+			</div>
 			<hr>
 			<%= f.submit "Sign up" ,class: "btn btn-success" %>
 			<%end%>
