@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
         cookies[:email] =  { value: params[:email], expires: Time.now + 3600}
         cookies[:password] = { value: params[:password], expires: Time.now + 3600}
       else
-        cookies.delete(:user)
+        cookies.delete(:email)
+        cookies.delete(:password)
       end
 
       # binding.pry
