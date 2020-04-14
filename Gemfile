@@ -20,7 +20,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'kaminari'
 gem 'carrierwave'
 gem 'omniauth-facebook'
-gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootstrap-sass', '~> 3.4.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
