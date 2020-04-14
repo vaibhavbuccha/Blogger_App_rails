@@ -20,11 +20,11 @@
 		<div class="row"  style="color:white; padding: 20px; font-size:20px;" >
 
 			<div class="col-sm-6">Picture</div>
-				<% if user.image? %>
-				<div class="col-sm-6">	<%= image_tag(user.image  ,width: "300px") if user.image.attached? %></div>
+				<% if user.image.attached? %>
+					<div class="col-sm-6">	<%= image_tag user.image  ,width: "300px"  if user.image.attached? %></div>
 				<% else %>
 				<div class="col-sm-6" >
-					<%= image_tag asset_url("images/no_user.png") %>
+						<%= image_tag "no_user.png", width: "300px"  %>
 				</div>
 				<% end %>
 		</div>

@@ -12,13 +12,13 @@
 		<div class="row title"  >
 			<div class="col-sm-3">
 				By :- <i><%= b.user.name %></i>
-			</div>	
+			</div>
 			<div class="col-sm-4"></div>
 			<div class="col-offset-3">
 				Created At :-  <i><%= b.created_at %></i>
 			</div>
 		</div>
-		<h4  ><%= b.title %></h4>		
+		<h4  ><%= b.title %></h4>
 		<div>
 			<%= b.content %>
 		</div>
@@ -36,7 +36,7 @@
 <% end %>
 
 <div align="center" class="jumbotron" >
-	
+
 		<%= paginate @blogs %>
 
 </div>
