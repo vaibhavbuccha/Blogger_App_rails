@@ -25,7 +25,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'pry'
 gem 'figaro'
 
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'

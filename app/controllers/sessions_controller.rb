@@ -6,6 +6,14 @@ class SessionsController < ApplicationController
   	user = User.find_by(email: params[:email])
 
   	if user && user.authenticate(params[:password])
+      if params[:remember_me] == 1  
+        cookies[:email] =  { value: params[:email], expires: Time.now + 3600}
+        cookies[:password] = { value: params[:password], expires: Time.now + 3600}
+      else
+        cookies.delete(:user)
+      end
+
+      # binding.pry
   		session[:user_id] = user.id
   		session[:user_name] = user.name
   		flash[:success] ="Welcome"
