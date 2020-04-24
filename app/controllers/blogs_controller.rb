@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  
+
   def index
   end
 
@@ -48,7 +48,7 @@ class BlogsController < ApplicationController
   def destroy
     if logged_in?
       @blog = Blog.find(params[:blog][:id])
-      @blog.destroy 
+      @blog.destroy
       flash[:success] = "Blog '#{@blog.title}' deleted successfully.... "
       redirect_to(root_path)
     else
