@@ -4,7 +4,7 @@
 </div>
 <% @blog.each do |b| %>
 <br>
-<div class="row">
+<div class="row  post<%= b.id %>">
 	<div class="col-sm-8 col-md-offset-2 well">
 		<div class="row title"  >
 			<div class="col-sm-3">
@@ -23,11 +23,24 @@
 			<img src="<%= b.image %>" width="400px" height="300" alt="">
 		</div>
 		<div align="right">
-			<%= form_for( b, :url=> blogs_path(b), :method => "delete" )do |f| %>
-				<%= f.hidden_field :id ,value: b.id %>
-				<%= f.submit "Delete", class: "btn btn-danger" %>
-			<%end%>
+				<button type="button" name="button" class="btn btn-danger" onclick="del(<%=  b.id %>)"  >Delete</button>
+
 		</div>
 	</div>
-</div>
+ </div>
 <%end%>
+<script>
+	let del = (id)=>{
+				$('.post'+id).fadeOut();
+			$.ajax({
+					url : "<%= blogs_path() %>",
+					type : "DELETE",
+					data : {
+						'format' : id
+					},
+					success : function(data){
+
+					}
+			});
+	}
+</script>

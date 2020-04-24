@@ -46,15 +46,24 @@ class BlogsController < ApplicationController
   end
 
   def destroy
-    if logged_in?
-      @blog = Blog.find(params[:blog][:id])
-      @blog.destroy
-      flash[:success] = "Blog '#{@blog.title}' deleted successfully.... "
-      redirect_to(root_path)
-    else
-      flash[:danger] = "Please login first"
-      redirect_to login_path
-    end
+    @blog = Blog.find(params[:format])
+    @blog.destroy
+
+
+      respond_to do |f|
+        f.html { redirect_to root_path }
+        f.js
+      end
+
+    # if logged_in?
+    #   @blog = Blog.find(params[:blog][:id])
+    #   @blog.destroy
+    #   flash[:success] = "Blog '#{@blog.title}' deleted successfully.... "
+    #   redirect_to(root_path)
+    # else
+    #   flash[:danger] = "Please login first"
+    #   redirect_to login_path
+    # end
   end
 
 
